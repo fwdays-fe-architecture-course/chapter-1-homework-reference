@@ -20,7 +20,7 @@ export async function getTodos(searchParams: any): Promise<{ data: Todo[] }> {
     query = query.eq("priority", priority);
   }
 
-  if (searchParams.completed) {
+  if (searchParams.completed !== undefined && searchParams.completed !== 'All') {
     query = query.eq("completed", searchParams.completed === "Completed");
   }
 
